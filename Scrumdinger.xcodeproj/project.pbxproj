@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		831F80A325D462E200662887 /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F80A225D462E200662887 /* MeetingTimerView.swift */; };
 		831F80AB25D47C5E00662887 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F80AA25D47C5E00662887 /* SpeechRecognizer.swift */; };
 		831F80B025D4815200662887 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F80AF25D4815200662887 /* HistoryView.swift */; };
+		83411C882CF6E04200B4E53A /* libfraction.c in Sources */ = {isa = PBXBuildFile; fileRef = 83411C872CF6E04200B4E53A /* libfraction.c */; };
 		838FE8F625D348DB007C10A9 /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838FE8F525D348DB007C10A9 /* MeetingHeaderView.swift */; };
 		838FE8FB25D355CA007C10A9 /* ScrumProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838FE8FA25D355CA007C10A9 /* ScrumProgressViewStyle.swift */; };
 		838FE90025D35733007C10A9 /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838FE8FF25D35733007C10A9 /* ScrumTimer.swift */; };
@@ -51,6 +52,9 @@
 		831F80A225D462E200662887 /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
 		831F80AA25D47C5E00662887 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		831F80AF25D4815200662887 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		83411C852CF6E04200B4E53A /* Scrumdinger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scrumdinger-Bridging-Header.h"; sourceTree = "<group>"; };
+		83411C862CF6E04200B4E53A /* libfraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libfraction.h; sourceTree = "<group>"; };
+		83411C872CF6E04200B4E53A /* libfraction.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libfraction.c; sourceTree = "<group>"; };
 		838FE8F525D348DB007C10A9 /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 		838FE8FA25D355CA007C10A9 /* ScrumProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumProgressViewStyle.swift; sourceTree = "<group>"; };
 		838FE8FF25D35733007C10A9 /* ScrumTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
@@ -166,7 +170,10 @@
 				838FE91725D3756F007C10A9 /* History.swift */,
 				838FE91C25D37FF6007C10A9 /* ScrumData.swift */,
 				838FE8FF25D35733007C10A9 /* ScrumTimer.swift */,
+				83411C862CF6E04200B4E53A /* libfraction.h */,
+				83411C872CF6E04200B4E53A /* libfraction.c */,
 				831F80AA25D47C5E00662887 /* SpeechRecognizer.swift */,
+				83411C852CF6E04200B4E53A /* Scrumdinger-Bridging-Header.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,11 +240,13 @@
 		839A38D025D1B8BA0016C623 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					839A38D725D1B8BA0016C623 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1610;
 					};
 					839A38E825D1B8BB0016C623 = {
 						CreatedOnToolsVersion = 12.4;
@@ -301,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83411C882CF6E04200B4E53A /* libfraction.c in Sources */,
 				839A38DE25D1B8BA0016C623 /* MeetingView.swift in Sources */,
 				839A393F25D1D3F60016C623 /* ScrumsView.swift in Sources */,
 				838FE91825D3756F007C10A9 /* History.swift in Sources */,
@@ -389,6 +399,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -450,6 +461,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -473,6 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
 				DEVELOPMENT_TEAM = P8US7E498L;
@@ -485,6 +498,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Scrumdinger9409123409812;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scrumdinger/Models/Scrumdinger-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -495,6 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
 				DEVELOPMENT_TEAM = P8US7E498L;
@@ -507,6 +523,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Scrumdinger9409123409812;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scrumdinger/Models/Scrumdinger-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -515,7 +532,6 @@
 		839A390125D1B8BB0016C623 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8US7E498L;
@@ -537,7 +553,6 @@
 		839A390225D1B8BB0016C623 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8US7E498L;
@@ -559,7 +574,6 @@
 		839A390425D1B8BB0016C623 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8US7E498L;
 				INFOPLIST_FILE = ScrumdingerUITests/Info.plist;
@@ -579,7 +593,6 @@
 		839A390525D1B8BB0016C623 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8US7E498L;
 				INFOPLIST_FILE = ScrumdingerUITests/Info.plist;

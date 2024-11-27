@@ -77,7 +77,6 @@ class ScrumTimer: ObservableObject {
         timer = nil
         timerStopped = true
     }
-    
     /// Advance the timer to the next speaker.
     func skipSpeaker() {
         var frac1 = Fraction(
