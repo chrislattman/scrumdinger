@@ -7,6 +7,12 @@
 
 import Foundation
 
+@_cdecl("printFunc")
+func printFunc(argString: Optional<UnsafePointer<CChar>>) {
+    print(String(cString: argString!))
+}
+
+let printFuncPointer: Optional<@convention(c) (Optional<UnsafePointer<CChar>>) -> Void> = printFunc
 
 /// Keeps time for a daily scrum meeting. Keep track of the total meeting time, the time for each speaker, and the name of the current speaker.
 class ScrumTimer: ObservableObject {
@@ -71,8 +77,24 @@ class ScrumTimer: ObservableObject {
         timer = nil
         timerStopped = true
     }
+    
     /// Advance the timer to the next speaker.
     func skipSpeaker() {
+        var frac1 = Fraction(
+            numerator: 10,
+            denominator: 13,
+            str: ("Hello" as NSString).utf8String,
+            print_func: printFuncPointer
+        )
+        var frac2 = Fraction(
+            numerator: 9,
+            denominator: 17,
+            str: ("World!" as NSString).utf8String,
+            print_func: printFuncPointer
+        )
+        let retval = fraction_multiply(&frac1, &frac2)
+        print("10/13 * 9/17 = \(frac1.numerator)/\(frac1.denominator)")
+        print("Error code = \(retval)")
         changeToSpeaker(at: speakerIndex + 1)
     }
 
